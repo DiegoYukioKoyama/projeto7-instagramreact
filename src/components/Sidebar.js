@@ -1,44 +1,26 @@
 import Sugestao from "./Sugestao";
+import UsuarioSidebar from "./UsuarioSidebar";
 
 export default function Sidebar() {
+    const sugestao = [
+        {imagem: "assets/img/bad.vibes.memes.svg", usuario: "bad.vibes.memes", texto: "Segue você"},
+        {imagem: "assets/img/chibirdart.svg", usuario: "chibirdart", texto: "Segue você"},
+        {imagem: "assets/img/razoesparaacreditar.svg", usuario: "razoesparaacreditar", texto: "Novo no Instagram"},
+        {imagem: "assets/img/adorable_animals.svg", usuario: "adorable_animals", texto: "Segue você"},
+        {imagem: "assets/img/smallcutecats.svg", usuario: "smallcutecats", texto: "Segue você"}
+    ]
     return (
         <div class="sidebar">
-            <div class="usuario">
-                <img src="assets/img/catanacomics.svg" />
-                <div class="texto">
-                    <strong>catanacomics</strong>
-                    <span>
-                        Catana
-                        <ion-icon name="pencil"></ion-icon>
-                    </span>
-                </div>
-            </div>
+            <UsuarioSidebar imagem="assets/img/catanacomics.svg" usuario="catanacomics" texto="Catana" />
 
             <div class="sugestoes">
                 <div class="titulo">
                     Sugestões para você
                     <div>Ver tudo</div>
                 </div>
-                <Sugestao imagem="assets/img/bad.vibes.memes.svg" usuario="bad.vibes.memes" texto="Segue você" />
-                <Sugestao imagem="assets/img/chibirdart.svg" usuario="chibirdart" texto="Segue você"/>
-               
-                <Sugestao imagem="assets/img/razoesparaacreditar.svg" usuario="razoesparaacreditar" texto="Novo no Instagram" />
 
-                <Sugestao imagem="assets/img/adorable_animals.svg" usuario="adorable_animals" texto="Segue você" />
+                {sugestao.map((s) => <Sugestao imagem={s.imagem} usuario={s.usuario} texto={s.texto} />)}
 
-                <Sugestao imagem="assets/img/smallcutecats.svg" usuario="smallcutecats" texto="Segue você" />
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/smallcutecats.svg" />
-                        <div class="texto">
-                            <div class="nome">smallcutecats</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
             </div>
 
             <div class="links">
