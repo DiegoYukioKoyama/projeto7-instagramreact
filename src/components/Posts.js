@@ -5,7 +5,7 @@ export default function Posts(){
     {imagem: "assets/img/barked.svg", imagem2: "assets/img/dog.svg", usuario: "barked", usuario2: "adorable_animals", texto: "outras 99.159 pessoas" }
   ]
     return (
-    <div class="posts">
+    <div className="posts">
       {posts.map((p) => <Post imagem={p.imagem} imagem2={p.imagem2} usuario={p.usuario} usuario2={p.usuario2} texto={p.texto} />)}
     </div>
     )
