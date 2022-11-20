@@ -5,10 +5,9 @@ export default function Post(props) {
   const [like, setLike] = useState(<ion-icon data-test="like-post" onClick={curtir} name="heart-outline"></ion-icon>)
   const [likeImg, setLikeImg] = useState(props.imagem2)
   const [curtidas, setCurtidas] = useState(props.curtidas)
-  let curtidasI = curtidas
+  let curtidasI = props.curtidas
   let curtidasS = String(Number(curtidas.replaceAll(".", "")) + 1)
-  let nCurtidas = Math.floor(curtidasS.length - 3)
-  nCurtidas = curtidasS.substring(0, nCurtidas)+"."+curtidasS.substring(nCurtidas)
+  let nCurtidas = curtidasS.substring(0, curtidasS.length - 3)+"."+curtidasS.substring(curtidasS.length - 3)
 
   function salvar(){
     if(contador === 0){
@@ -34,9 +33,11 @@ export default function Post(props) {
   }
 
   function curtirImg(){
-    if(contador === 0){
+    if(curtidas === curtidasI){
       setLike(<div className="coracao"><ion-icon data-test="like-post" onClick={curtir} name="heart"></ion-icon></div>)
       setCurtidas(nCurtidas)
+      contador++ 
+      console.log(curtidasI)
     }
   }
   return (
